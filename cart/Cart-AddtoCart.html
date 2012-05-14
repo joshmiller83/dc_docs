@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-
+<!-- dc_docs-AddtoCart-1.0 / Josh Miller / May 13, 2012
+     @todo - Add Screenshots
+     @todo - Get Ryan to look at content.
+-->
 <html>
 <head>
     <title>Cart-AddtoCart</title>
@@ -7,17 +10,63 @@
 </head>
 
 <body>
-<h1>Cart-AddtoCart</h1>
-<h2>Video / Assets</h2>
-<ul>
-    <li><a href="#">Link</a></li>
-</ul>
-<h2>Documentation</h2>
-<p>Desc</p>
-<ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
+<h1>Add-to-Cart Buttons for Drupal Commerce</h1>
+<h2>What is the Add-to-Cart button?</h2>
+<p>Almost everything in Drupal Commerce is put together using a common Drupal
+pattern: Content (entity and fields system), Views (listing things), and Rules
+(taking actions on events). The Add-to-Cart button is no different. But there
+is a bit of <em>mythical Drupal magic</em> that makes this button show up and
+we aim to help you peer behind the curtains.</p>
+<h2>Add-to-Cart Configuration using Fields</h2>
+<p>With Drupal Commerce 1.2, we've replaced the Add-to-Cart magic with
+dependable configuration settings. By altering forms in the Field UI, we now
+embed options to help you create complex Add to Cart forms. Below are three
+documented ways to access, alter, or create Add-to-Cart buttons.</p>
+<ol class="inpagenav">
+    <li><a href="#product-reference-field">Product Reference Field</a> - An
+    Add-to-Cart button that is configured on the Display Node.</li>
+    <li><a href="#product-type-field">Product Type Field</a> - An Add-to-Cart
+    button that is configured on the Product Entity level.</li>
+    <li><a href="#line-item-field">Line Item Field</a> - An Add-to-Cart
+    button that is configured on the Line Item level.</li>
 </ol>
+<h3 id="product-reference-field">Add-to-Cart Buttons using Product Reference
+Fields</h3>
+<div class="screenshot">
+    <div class="caption">
+        [img]
+        <p>When you add a <a href="../products/Prod-Disp-Node.html">product
+        reference field to an entity</a>, you have the option of injecting
+        fields from the referenced products into the display of the referencing
+        entity.</p>
+    </div>
+</div>
+<p>A great example of a product reference field is the one found in the Product
+display node type that Commerce Kickstart creates. The product reference field
+enables prices, images, and other fields attached to your products to be
+displayed in the node along with an Add-to-Cart button.</p>
+<h3 id="product-type-field">Add-to-Cart Buttons using Product Entity Fields</h3>
+<div class="screenshot">
+    <div class="caption">
+        [img]
+        Caption
+    </div>
+</div>
+<p>By adding fields to your product types, you can create a group of
+products representing variations of the same base product (e.g. different
+sizes of the same style and design of a shirt). There's a simple checkbox to
+start using field data on the Add to Cart form along with an optional widget
+choice.</p>
+<h4 id="line-item-field">Line Items, Field Configuration</h4>
+<div class="screenshot">
+    <div class="caption">
+        [img]
+        Caption
+    </div>
+</div>
+<p>By adding fields to your line item types, you can expose customization
+options to the customer on the Add to Cart form. If you have multiple types of
+customizable products, you can create additional product line item types and use
+them on different Add to Cart forms.</p>
 </body>
 </html>

@@ -1,5 +1,13 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,800italic,400,300,700,800);
 html { background: #ddd; }
-body { font-family: "Open Sans", sans-serif; margin: 15px 15%; padding: 10px; background: #FFF; }
+body { font-family: "Open Sans", sans-serif; margin: 15px 15%; padding: 30px; background: #FFF; font-size: 90%; line-height: 1.4em; }
 h1 { margin: 0 0 1em 0; }
 h2 { font-weight: 300; font-style: italic; border-bottom: 1px dotted #000; padding-bottom: .4em; margin-bottom: .4em; }
+h3 { font-weight: 700; color: #2AABE2; margin: 20px 0 10px 0; }
+a { color: #2AABE2; font-weight: 700; }
+.screenshot img { width: 96%; overflow: hidden; border: 3px solid #fff; margin: 10px; -moz-box-shadow: 1px 3px 8px rgba(0,0,0, .6); -webkit-box-shadow: 1px 3px 8px rgba(0,0,0, .6); box-shadow: 1px 3px 8px rgba(0,0,0, .6); }
+.screenshot .caption { padding: 5px 10px 5px 420px; background: #2AABE2; font-size: 85%; line-height: normal; }
+.screenshot .caption img { width: 380px; margin-left: -405px; float: left; }
+.screenshot .caption:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.screenshot .caption .caption-title { font-weight: 800; text-transform:  uppercase; color: #FFF; letter-spacing: 0.03em; border-bottom: 1px dotted #FFF; padding-bottom: 6px; }
+.screenshot .caption a { color: #000; font-style:  italic; }

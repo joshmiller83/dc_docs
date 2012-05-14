@@ -91,18 +91,30 @@ the entity or hide them.</p>
 display node type that Commerce Kickstart creates. The product reference field
 enables prices, images, and other fields attached to your products to be
 displayed in the node along with an Add-to-Cart button.</p>
-<h3 id="product-type-field">Add-to-Cart Buttons using Product Entity Fields</h3>
-<div class="screenshot">
+<h3 id="product-type-field">Add-to-Cart Buttons Examples</h3>
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Add-to-Cart-Drupal-Commerce-1.png">
+            <img src="../screenshots/Add-to-Cart-Drupal-Commerce-1.png"
+                 alt="Where do you configure the Add-to-Cart button in Drupal
+                 Commerce?" />
+        </a>
+    </div>
     <div class="caption">
-        [img]
         Caption
     </div>
 </div>
-<p>By adding fields to your product types, you can create a group of
-products representing variations of the same base product (e.g. different
-sizes of the same style and design of a shirt). There's a simple checkbox to
-start using field data on the Add to Cart form along with an optional widget
-choice.</p>
+<p>The most obvious example is the basic price field attached to products. In
+most cases, you will need the price displayed along with the product description
+and Add to Cart form.</p>
+<p>Another use case is the product image field created during the Commerce
+Kickstart installation. This is especially the case for groups of products where
+each variation contains a unique image (e.g. for a different color of the
+product, such as a lipstick). You will want this image rendered into the node
+display that groups these products together.</p>
+<p>When the customer updates the Add to Cart form for a group of products to
+select a different product from the group, the price, image, and other injected
+fields will be updated to represent the newly selected product.</p>
 <h4 id="line-item-field">Line Items, Field Configuration</h4>
 <div class="screenshot">
     <div class="caption">

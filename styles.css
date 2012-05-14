@@ -6,16 +6,17 @@ h2 { font-weight: 300; font-style: italic; border-bottom: 1px dotted #000; paddi
 h3 { font-weight: 700; color: #2AABE2; margin: 20px 0 10px 0; }
 a { color: #2AABE2; font-weight: 700; }
 .screenshot img { width: 96%; overflow: hidden; border: 3px solid #fff; margin: 10px; -moz-box-shadow: 1px 3px 8px rgba(0,0,0, .6); -webkit-box-shadow: 1px 3px 8px rgba(0,0,0, .6); box-shadow: 1px 3px 8px rgba(0,0,0, .6); }
-.screenshot .caption { padding: 5px 10px 5px 420px; background: #2AABE2; font-size: 85%; line-height: normal; }
-.screenshot .caption img { width: 380px; margin-left: -405px; float: left; }
+.screenshot-caption { padding: 5px; background: #2AABE2; font-size: 85%; line-height: normal; }
+.screenshot-caption .img { width: 65%; float: left; margin-right: 10px; }
 .screenshot .screenshot_breadcrumbs:after,
 .screenshot:after,
 .screenshot .caption:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
-.screenshot .caption .caption-title { font-weight: 800; text-transform:  uppercase; color: #FFF; letter-spacing: 0.03em; border-bottom: 1px dotted #FFF; padding-bottom: 6px; }
+.screenshot .caption { padding-right: 5px; }
+.screenshot .caption .caption-title { font-weight: 800; text-transform:  uppercase; color: #FFF; letter-spacing: 0.03em; }
 .screenshot .caption a { color: #000; font-style:  italic; }
 .screenshot .screenshot_breadcrumbs,
 .screenshot .screenshot_breadcrumbs li { margin:0; padding: 0; list-style: none; font-size: 12px; font-style: italic; color: #FFF; line-height: normal; }
-.screenshot .screenshot_breadcrumbs { background: #414143; padding-left: 9px; }
+.screenshot .screenshot_breadcrumbs { background: #414143; padding-left: 9px; margin: 0 -5px -5px -5px;}
 .screenshot .screenshot_breadcrumbs li { float: left; padding: 5px 20px 5px 0; position: relative; }
 .screenshot .screenshot_breadcrumbs li:after { content: " "; display: block; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid #FFF; position: absolute; top: 50%; margin-top: -4px; right: 7px; z-index: 2; }
 .screenshot .screenshot_breadcrumbs li.last { font-weight: bold; color: #2AABE2; }

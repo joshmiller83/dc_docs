@@ -34,8 +34,7 @@ documented ways to access, alter, or create Add-to-Cart buttons.</p>
     <li><a href="#line-item-field">Line Item Field</a> - An Add-to-Cart
     button that is configured on the Line Item level.</li>
 </ol>
-<h3 id="product-reference-field">Add-to-Cart Buttons using Product Reference
-Fields</h3>
+<h3 id="product-reference-field">Product Reference Fields</h3>
 <div class="screenshot screenshot-caption">
     <div class="img">
         <a href="../screenshots/Add-to-Cart-Drupal-Commerce-Product-Reference-Field.png">
@@ -58,6 +57,36 @@ Fields</h3>
         <li class="last">field_product</li>
     </ul>
 </div>
+<p>Any field attached to a product may be rendered into the display of an entity
+(i.e. node). This feature must be enabled in the product reference field's
+settings form. We call this <em>field injection</em>, because the field is
+attached to the product itself but can be displayed in the referencing entities
+to make this extra product data visible to customers.</p>
+
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Add-to-Cart-Drupal-Commerce-Product-Display-Formatter.png">
+        <img src="../screenshots/Add-to-Cart-Drupal-Commerce-Product-Display-Formatter.png"
+             alt="Product Reference Field Configuration Screen" /></a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Product Display Formatter</p>
+        <p>Because these are fields attached to the product itself, you must
+        update the field display settings on the product type to change the
+        display formatter and/or the field's global visibility. </p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Products</li>
+        <li>Product Types</li>
+        <li class="last">Manage Display</li>
+    </ul>
+</div>
+<p>Then in the field display settings for
+each entity type that contains a product reference field, you will see all
+available product reference fields to reorder them relative to other fields on
+the entity or hide them.</p>
 <p>A great example of a product reference field is the one found in the Product
 display node type that Commerce Kickstart creates. The product reference field
 enables prices, images, and other fields attached to your products to be

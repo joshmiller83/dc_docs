@@ -14,10 +14,9 @@ a { color: #2AABE2; font-weight: 700; }
 .screenshot .caption .caption-title { font-weight: 800; text-transform:  uppercase; color: #FFF; letter-spacing: 0.03em; border-bottom: 1px dotted #FFF; padding-bottom: 6px; }
 .screenshot .caption a { color: #000; font-style:  italic; }
 .screenshot .screenshot_breadcrumbs,
-.screenshot .screenshot_breadcrumbs li { margin:0; padding: 0; list-style: none; font-size: 12px; font-style: italic; color: #333; line-height: normal; }
-.screenshot .screenshot_breadcrumbs { border-bottom: 1px dotted #2AABE2; }
+.screenshot .screenshot_breadcrumbs li { margin:0; padding: 0; list-style: none; font-size: 12px; font-style: italic; color: #FFF; line-height: normal; }
+.screenshot .screenshot_breadcrumbs { background: #414143; padding-left: 9px; }
 .screenshot .screenshot_breadcrumbs li { float: left; padding: 5px 20px 5px 0; position: relative; }
-.screenshot .screenshot_breadcrumbs li:after {
-content: " "; display: block; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid #333; position: absolute; top: 50%; margin-top: -4px; right: 7px; z-index: 2; }
+.screenshot .screenshot_breadcrumbs li:after { content: " "; display: block; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid #FFF; position: absolute; top: 50%; margin-top: -4px; right: 7px; z-index: 2; }
 .screenshot .screenshot_breadcrumbs li.last { font-weight: bold; color: #2AABE2; }
 .screenshot .screenshot_breadcrumbs li.last:after { display:none; }

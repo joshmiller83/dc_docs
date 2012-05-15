@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,800italic,400,300,700,800);
 html { background: #ddd; }
-body { font-family: "Open Sans", sans-serif; margin: 15px 15%; padding: 30px; background: #FFF; font-size: 90%; line-height: 1.4em; }
+body { font-family: "Open Sans", sans-serif; margin: 15px auto; width: 620px; padding: 30px; background: #FFF; font-size: 90%; line-height: 1.4em; }
 h1 { margin: 0 0 1em 0; }
 h2 { font-weight: 300; font-style: italic; border-bottom: 1px dotted #000; padding-bottom: .4em; margin-bottom: .4em; }
 h3 { font-weight: 700; color: #2AABE2; margin: 20px 0 10px 0; }

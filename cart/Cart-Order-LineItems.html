@@ -89,6 +89,46 @@ introduce alternate logic to the cart load process if necessary.</p>
 <p><strong>Note:</strong> As long as the order is still in the shopping cart state, its line
 items will be re-validated on load against the latest product prices /
 availability, etc.</p>
+<h2>Modifying a Line Item in Cart Using Rules</h2>
+<p>This is an advanced action that involves Rules and setting values, but we
+thought it was worth documenting seeing as how we've gotten lots of issues and
+requests regarding this kind of functionality. For example, lets say you can
+only buy Product A if Product B is not in the cart. You can make Drupal Commerce
+understand this using Rules. We describe the recommend rule below.</p>
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Cart-Order-LineItems-UnsetLineItem.png"><img
+        src="../screenshots/Cart-Order-LineItems-UnsetLineItem.png" alt="Clone
+        the unset price rule to set up your own rule with your own logic" /></a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Unset Price Rule</p>
+        <p>To remove an item from the cart using rules, you must unset the price
+        of the line item during "Calculating the sell price of a product."
+        Deleting a line item just involves setting the price to the amount to
+        NULL (i.e. no value, not 0)</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Configuration</li>
+        <li>Produt Pricing Rules</li>
+        <li class="last">Click "Clone"</li>
+    </ul>
+</div>
+<p>To remove an item from the cart using rules, you must unset the price of the
+line item during "Calculating the sell price of a product." This is similar to
+the rule "Unset the price of disabled products in the cart" that is included
+with core. So you can refer to that as an example. Deleting a line item just
+involves setting the price to the amount to NULL (i.e. no value, not 0).</p>
+<p>Thanks to ressa over at Drupal.org, we know we need to further clarify
+our advice: "For those trying to remove a line item by entering an empty field,
+and setting the price to NULL, you do it under 'Add action' -> 'Data' -> 'Set a
+data value'. Under Data Selector, enter
+'commerce-line-item:commerce-unit-price:amount' ... and just leave the 'Value'
+field empty, don't actually type "NULL" :-)"</p>
+
+
 <h2>Related Assets</h2>
 <p>Are you looking for how to modify the cart block? Checkout our entire article
 on <a href="../cart/Cart-BlockandViews.html">modifying the Shopping Cart block using views</a>.</p>

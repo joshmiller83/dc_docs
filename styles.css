@@ -20,6 +20,7 @@ a { color: #2AABE2; font-weight: 700; }
 .screenshot .screenshot_breadcrumbs { background: #414143; padding-left: 9px; box-shadow: 1px 3px 8px rgba(0,0,0, .6); margin-top: -5px; }
 .screenshot-caption .screenshot_breadcrumbs { margin: 0 -5px -5px -5px;  box-shadow: none; }
 .screenshot .screenshot_breadcrumbs li { float: left; padding: 5px 20px 5px 0; position: relative; }
+.screenshot .screenshot_breadcrumbs li.first { clear: left; }
 .screenshot .screenshot_breadcrumbs li:after { content: " "; display: block; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 5px solid #FFF; position: absolute; top: 50%; margin-top: -4px; right: 7px; z-index: 2; }
 .screenshot .screenshot_breadcrumbs li.last { font-weight: bold; color: #2AABE2; }
 .screenshot .screenshot_breadcrumbs li.last:after { display:none; }

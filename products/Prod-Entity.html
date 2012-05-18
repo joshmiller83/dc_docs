@@ -7,17 +7,50 @@
 </head>
 
 <body>
-<h1>Prod-Entity</h1>
-<h2>Video / Assets</h2>
+<h1>Products as an Entity</h1>
+
+<div class="screenshot">
+    <a href="../screenshots/dc_entity_graph.png">
+        <img src="../screenshots/dc_entity_graph.png"
+             alt="Drupal Commerce Entity Graph" />
+    </a>
+</div>
+<p>The above graphic shows how all of the major entities in Drupal Commerce come together. Note how the ubiquitous Drupal node is "grouping" or "referencing" various products. We achieve this with a product reference field. When you add a product to your cart and/or you go to checkout, an order is created with a line item that references your product. Finally, the customer is taken through the checkout process and the order status is hopefully updated to "complete."</p>
+<p>This organization was critical to the primary objective of Drupal Commerce: Be the most flexible e-commerce framework available. So products are not nodes and unlike ubercart (the other Drupal commerce package) product variations do not happen on the node level.</p>
+<h2>Product Variations</h2>
+<p>Let's say you have a t-shirt shop. One of your products is a very cool blue Drupal-or-Nothing shirt. This shirt comes in a variety of catchy colors and sizes. The way Drupal Commerce works is that it makes no assumption about how you want to organize your products. Very much like a retail outlet, each specific variation ("blue" and "xl") have their own SKU and potentially their own price. But for this t-shirt shop you want to have a product page called "Drupal-or-Nothing" that displays all the sizes in a nice, configurable shopping experience that we've all seen around the web.</p>
+<p>That's where the node comes in. In Drupal Commerce, you need to add products separately from product pages. So, to make our Drupal-or-Nothing page, we simply create a product display node and reference all of our Drupal-or-Nothing shirts using the product reference field.</p>
+<p>So, if it helps to think in terms of your Drupal experience, you can imagine the Drupal Commerce Products as images that you attach to your node that come with meta data like price, SKU, etc.</p>
+<p>We hear a lot of "yes, but..." responses when we describe the Drupal Commerce products and product display nodes. Here's the thing, decoupling products from their display nodes is a fantastically simple way to make your store amazingly flexible. As with all flexibility, it adds a bit of a learning curve, but you are better off for it. There are two community-driven ways to make your products either in bulk (7 sizes x 7 colors = 49 products for one kind of shirt…), or you can create products from within a node using the new inline entity form (very handy). Videos below.</p>
+
+<iframe src="http://player.vimeo.com/video/40933753?portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+<iframe src="http://player.vimeo.com/video/34385004?portrait=0" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+<h2>Product Types</h2>
+<p>Using Drupal 7's entity system has provided us with a very simple paradigm: Nodes had Content Types. Content Types had fields and made lots of sense for content-related items. Product Entities are similar to Content Types. You can create Product Types with various fields.</p>
+<p>For example, you may want to sell physical books, ebook downloads, and have a donation system similar to Kickstarter for up-and-coming authors. Each product type can have it's own set of fields, rules, display settings, etc. You can add and edit product types right there in core using strikingly familiar forms (they are literally the same as the content type forms, minus all of the unnecessary content type settings). Going back to our example you might have three product types, with a few fields:</p>
 <ul>
-    <li><a href="#">Link</a></li>
-</ul>
-<h2>Documentation</h2>
-<p>Desc</p>
-<ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
-</ol>
+  <li>Physical Books
+    <ul>
+      <li>Front Cover Image</li>
+      <li>Author Image</li>
+      <li>eBook Reference Field</li>
+    </ul>
+  </li>
+  <li>Downloadable eBooks
+    <ul>
+      <li>eBook Free Preview</li>
+      <li>eBook Full PDF Download</li>
+    </ul>
+  </li>
+  <li>Author Kickstarter Donations
+    <ul>
+      <li>Donation Level (custom line item type)</li>
+      <li>Words of Encouragement (custom line item type)</li>
+    </ul>
+  </li>
+</ul></p>
+<p>We're sure you can come up with your own set of really interesting cross-selling kinds of products that push our Product entities to their limits! Let us know here if you have a site that you would like featured in the Showcase.</p>
 </body>
 </html>

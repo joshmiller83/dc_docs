@@ -7,17 +7,94 @@
 </head>
 
 <body>
-<h1>Price-Components</h1>
-<h2>Video / Assets</h2>
-<ul>
-    <li><a href="#">Link</a></li>
-</ul>
-<h2>Documentation</h2>
-<p>Desc</p>
+<h1>Price Components</h1>
+<p>Price Components represent a change record of what happened during price calculation to give you the final price of a line item or order. When building your price calculation rules, you have the ability to choose what time of price component should be used to represent the price change on the order, which is why we provide a couple generic types (like discount / fee).</p>
+
 <ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
+    <li>Price components will keep track of the changes or additions to a price during price calculation</li>
+    <li>You can specify which component to use in a price calculation rule</li>
 </ol>
+
+<p>Ultimately customizing these further will result in the best customer experience, so instead of just "Discount" a user might have visual feedback that they've received their "Member discount" or "Wholesale discount." The ability to customize the price component label is possible in a custom module or there have been rumors of a contributed module that provides an interface for this to work.</p>
+<h2>Enable Price Components for Display</h2>
+<p>In order to show you what price components look like, we've picked up the Price Calculations example towards the end. To see the whole exercise, <a href="Price-Calc.html">check it out</a>.</p>
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Calc-step8.png">
+            <img src="../screenshots/Price-Calc-step8.png" alt="Lets reveal the price components" />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Reveal Price</p>
+        <p>To see the discount on your product, you must go to the manage display.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Products</li>
+        <li>Product Types</li>
+        <li class="last">Manage Display</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Calc-step9.png">
+            <img src="../screenshots/Price-Calc-step9.png" alt="Set the price field to show formatted with components." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Price Field</p>
+        <p>Set the price field to show formatted with components.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Products</li>
+        <li>Product Types</li>
+        <li>Manage Display</li>
+        <li class="last">Edit Price</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Calc-step10.png">
+            <img src="../screenshots/Price-Calc-step10.png" alt="Administrators see the discount" />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Final Discount</p>
+        <p>Simply changing the price to show with components, it displays all that is necessary for the discount to be obvious. Also in the screenshot is the same site, not logged in. This is an important step to make sure that your condition is actually working.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Products</li>
+        <li>Product Types</li>
+        <li>Manage Display</li>
+        <li class="last">Edit Price</li>
+    </ul>
+</div>
+<h2>Enable Price Components via Rules</h2>
+<p>In order to show you what price components using rules look like, we've picked up the Price Calculations example in the very middle. To see the whole exercise, <a href="Price-Calc.html">check it out</a>.</p>
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Calc-step6.png">
+            <img src="../screenshots/Price-Calc-step6.png" alt="Set .5 for 50% off, and select Discount for the price component type." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Configure Action</p>
+        <p>When you are setting the actual math part of the discount, we chose to simply multiply by 0.5 for a 50% discount. You could also divide by 2. Note also that we have changed the value of the price component type. The price component type will show up when you show the price with components. Note that if you want to add your own price component type it will likely need to be done in code.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Configuration</li>
+        <li>Product Pricing Rules</li>
+        <li class="last">Configure Action</li>
+    </ul>
+</div>
 </body>
 </html>

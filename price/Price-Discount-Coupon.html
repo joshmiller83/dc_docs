@@ -7,17 +7,83 @@
 </head>
 
 <body>
-<h1>Price-Discount-Coupon</h1>
-<h2>Video / Assets</h2>
-<ul>
-    <li><a href="#">Link</a></li>
-</ul>
-<h2>Documentation</h2>
-<p>Desc</p>
-<ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
-</ol>
+The core product pricing system is great for flat / percentage discounts to products on the site and for alternate price lists. Special offers, such as “Buy one get one free”, are not supported in Drupal Commerce core. They depend on the creation and management of alternate line items (e.g. one line item for the paid product and another for the free product).
+
+Drupal Commerce’s sell price pre-calculation mechanism limits what types of data you can access in the conditions and actions of product pricing rules. Very few sites actually make use of this functionality, but the gist of it is your conditions cannot use data specific to the product (i.e. product type or SKU) and your actions can only use data specific to the product (i.e. not the day of the week or user roles).
+
+Even with those limitations, it is still possible to create quite complex pricing scenarios. One Drupal Commerce site currently uses approximately 1500+ Rules!
+
+<h2>Administrator's Special</h2>
+<div class="screenshot">
+    <a href="Price-Calc.html">
+        <img src="../screenshots/Price-Calc-step10.png" alt="Administrators see the discount" />
+    </a>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Products</li>
+        <li>Product Types</li>
+        <li>Manage Display</li>
+        <li class="last">Edit Price</li>
+    </ul>
+</div>
+<p>In the <a href="Price-Calc.html">Price Calculations article</a>, we went over how to create a conditional discount for a user role.</p>
+
+h2. Simple Coupon Code
+Add a coupon code textfield to the product line item type. Create a Rule that looks for this value and applies a discount based on the code entered.
+
+Price-Coupon-01.png
+We're going to add a coupon field to the default Line Item Type.
+Store Configuration
+To start with, we will navigate to the Store Configuration Screen and click "Line Item Types." In order to add a discount to our line items, we need to add a field.
+
+Price-Coupon-02.png
+Add field to Line Item
+Line Item Types
+Add field to Line Item
+
+Price-Coupon-03.png
+We're adding a coupon field here.
+Add Field
+We're adding a text field in the manage fields screen for our custom line type. If you want to be able to create unique line item types, there is a great contributed module for that called: <a href="http://drupal.org/project/commerce_custom_product">Commerce Customizable Products</a>.
+
+Price-Coupon-04.png
+Any additional field that you want to be configurable before clicking Add to Cart needs to be enabled here.
+Field Configuration
+Any additional field that you want to be configurable before clicking Add to Cart needs to be enabled here.
+
+Price-Coupon-05.png
+This is what the Coupon Code field should look like on an add to cart form.
+Add to Cart Preview
+This is what the Coupon Code field should look like on an add to cart form.
+
+Price-Coupon-06.png
+Go ahead and add a product to your cart, then click View Cart and then click edit view as shown here.
+Edit View
+Go ahead and add a product to your cart, then click View Cart and then click edit view as shown here.
+
+Price-Coupon-07.png
+Add our coupon field.
+Add Coupon Field
+In order to view our coupon on the shopping cart, we will add the field. Same could be done with the checkout views and/or Shopping Cart block.
+
+Price-Coupon-08.png
+Add Components
+Edit Price Field
+When configuring the price, make 
+
+Price-Coupon-09.png
+Price-Coupon-10.png
+Price-Coupon-11.png
+Price-Coupon-12.png
+Price-Coupon-13.png
+Price-Coupon-14.png
+Price-Coupon-15.png
+Price-Coupon-16.png
+Price-Coupon-17.png
+Price-Coupon-18.png
+Price-Coupon-19.png
+Price-Coupon-20.png
+Price-Coupon-21.png
 </body>
 </html>

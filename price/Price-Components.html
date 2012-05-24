@@ -16,6 +16,21 @@
 </ol>
 
 <p>Ultimately customizing these further will result in the best customer experience, so instead of just "Discount" a user might have visual feedback that they've received their "Member discount" or "Wholesale discount." The ability to customize the price component label is possible in a custom module or there have been rumors of a contributed module that provides an interface for this to work.</p>
+
+<p>The unit price of line items includes an array of price components that show the breakdown of
+how a particular price was calculated. These components will be multiplied by line item quantity
+into the line item’s total price field and added together into an order’s order total price field.
+Thus component data at the order level will show all the price components that went into the
+order total.</p>
+<p>Price component types are defined by modules installed on the site using
+hook_commerce_price_component_type_info(). Core price component types include:</p>
+<ul>
+    <li>Base price – typically the base price of a product prior to calculation</li>
+    <li>Discount – a simple price component type useful for price reductions</li>
+    <li>Fee – a simple price component type useful for price increases</li>
+    <li>Tax rates – each tax rate gets its own component type so the total tax collected for an
+order can be found in its order total price field</li>
+</ul>
 <h2>Enable Price Components for Display</h2>
 <p>In order to show you what price components look like, we've picked up the Price Calculations example towards the end. To see the whole exercise, <a href="Price-Calc.html">check it out</a>.</p>
 <div class="screenshot screenshot-caption">

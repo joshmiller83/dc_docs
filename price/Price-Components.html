@@ -19,16 +19,16 @@
 
 <p>The unit price of line items includes an array of price components that show the breakdown of
 how a particular price was calculated. These components will be multiplied by line item quantity
-into the line item’s total price field and added together into an order’s order total price field.
+into the line item's total price field and added together into an order's order total price field.
 Thus component data at the order level will show all the price components that went into the
 order total.</p>
 <p>Price component types are defined by modules installed on the site using
 hook_commerce_price_component_type_info(). Core price component types include:</p>
 <ul>
-    <li>Base price – typically the base price of a product prior to calculation</li>
-    <li>Discount – a simple price component type useful for price reductions</li>
-    <li>Fee – a simple price component type useful for price increases</li>
-    <li>Tax rates – each tax rate gets its own component type so the total tax collected for an
+    <li>Base price &mdash; typically the base price of a product prior to calculation</li>
+    <li>Discount &mdash; a simple price component type useful for price reductions</li>
+    <li>Fee &mdash; a simple price component type useful for price increases</li>
+    <li>Tax rates &mdash; each tax rate gets its own component type so the total tax collected for an
 order can be found in its order total price field</li>
 </ul>
 <h2>Enable Price Components for Display</h2>

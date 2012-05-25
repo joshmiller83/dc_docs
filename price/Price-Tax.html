@@ -7,73 +7,232 @@
 </head>
 
 <body>
-Taxes
 
-In Drupal Commerce, there is a system of tax rates that are applied using rules that are connected to categories or tax types. The Tax Rates are completely user supplied or perhaps third party supplied. 
-
+<h1>Taxes</h1>
+<p>In Drupal Commerce, there is a system of tax rates that are applied using rules that are connected to categories or tax types. The Tax Rates are completely user supplied or perhaps third party supplied. </p>
 <ul>
 <li><strong>Tax Rates</strong> - You can create a tax rate for each tax you must collect from your customers. Tax rates are defined in decimal format and may be applied to line item via Rules.</li>
 <li><strong>Tax Types</strong> - Tax types categorize tax rates and specify whether or not the calculated tax should be included in product prices on display.</li>
 </ul>
-
-The Tax Types indicate and allow for any variety of system to exist in code, but we define the two most common cases for use in Drupal Commerce. The best case scenario is that your required tax system falls under one of these two systems.
-
+<p>The Tax Types indicate and allow for any variety of system to exist in code, but we define the two most common cases for use in Drupal Commerce. The best case scenario is that your required tax system falls under one of these two systems.</p>
 <ul>
 <li>Sales Tax is the style of tax often used in the US, where many governmental entities impose their own tax on every purchase. It's typically added as a line item in the subtotal.</li>
 <li>VAT is used in much of the rest of the world. In VAT, the total shown to the customer already includes the tax, and nothing is added in the subtotal section (although Drupal Commerce does itemize the tax portion of the total.)</li>
 </ul>
-
-Taxes will of course be calculated in order of their Rules weights, but at present taxes
+<p>Taxes will of course be calculated in order of their Rules weights, but at present taxes
 are only cumulative if of the VAT type. Multiple sales taxes will all be calculated from whatever
-the current price amount is. 
-
-Because these are simply default Rules, you can disable them and create new Rules at will. Alternately, you can leave them in place and not make use of the default components, preferring instead to apply your taxes in code via hook_commerce_tax_type_calculate_rates().
-
-h2. Simple Taxes
-
-If you have a tax which is added to every order without any complex rules, there's nothing to it. Visit the tax rate configuration at Administration -> Store -> Configuration -> Taxes (admin/commerce/config/taxes) and add a tax rate.
-
-For example, let's create a simple 10% Sales Tax:
-
-Price-Tax-Simple1.png
-Add simple tax rate here.
-Navigate to Taxes
-It's not hard to locate the taxes page on the Store Configuration Panel. You might sleep better at night thinking this list is alphabetical, but we assure you that taxes is at the bottom because that's where it belongs.
-
-Price-Tax-Simple2.png
-Add a simple tax rate.
-Click Add a Tax Rate
-Be careful not to complicate this. We simply want you to click the "add a tax rate" link.
-
-Price-Tax-Simple3.png
-Make sure to follow the directions for the Drupal Commerce Price Tax Rate edit screen.
-Configure Tax Rate
-It's easy, all you have to do is come up with a title, a rate, and choose the type. In the display title, you might want to include what percentage you are applying (10%). 
-
-The two types, as already discussed above, are either applied to the beginning price of a product (VAT) or at the end total in checkout (Sales Tax).
-
-Price-Tax-Simple4.png
-Simple Tax Rate Applied
-Tax Rate
-This is an example of a cart with a simple flat-rate tax. It might occur to you that it would be cool if you could do a negative tax and call it a discount. That is an undocumented, but highly effective idea :)
-
-
-h2. Conditional Taxes
-
-Unfortunately, the world is not set up to allow us to do simple taxes all the time, and we end up needing rules for them. Drupal Commerce, though, is up to the task. It uses the Rules engine to allow you great power.
-
-Most of the time, we'll be applying different taxes based on the location of the buyer. There are other applications, but we'll demonstrate how to do it based on order address
-
-1. Add a 6% South Carolina Sales Tax and configure its component so it only applies to
-orders billed to South Carolina addresses. (Feel free to use your own state of course!)
-
-Price-Tax-Advanced01.png
-Price-Tax-Advanced02.png
-Price-Tax-Advanced03.png
-Price-Tax-Advanced04.png
-Price-Tax-Advanced05.png
-Price-Tax-Advanced06.png
-Price-Tax-Advanced07.png
-Price-Tax-Advanced08.png
+the current price amount is. </p>
+<p>Because these are simply default Rules, you can disable them and create new Rules at will. Alternately, you can leave them in place and not make use of the default components, preferring instead to apply your taxes in code via hook_commerce_tax_type_calculate_rates().</p>
+<h2>Simple Taxes</h2>
+<p>If you have a tax which is added to every order without any complex rules, there's nothing to it. Visit the tax rate configuration at Administration &gt; Store &gt; Configuration &gt; Taxes (admin/commerce/config/taxes) and add a tax rate.</p>
+<p>For example, let's create a simple 10% Sales Tax:</p>
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Tax-Simple1.png">
+            <img src="../screenshots/Price-Tax-Simple1.png" alt="Add simple tax rate here." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Navigate to Taxes</p>
+        <p>It's not hard to locate the taxes page on the Store Configuration Panel. You might sleep better at night thinking this list is alphabetical, but we assure you that taxes is at the bottom because that's where it belongs.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li class="last">Taxes</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Tax-Simple2.png">
+            <img src="../screenshots/Price-Tax-Simple2.png" alt="Add a simple tax rate." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Click Add a Tax Rate</p>
+        <p>Be careful not to complicate this. We simply want you to click the "add a tax rate" link.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Taxes</li>
+        <li class="last">Add a Tax Rate</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Tax-Simple3.png">
+            <img src="../screenshots/Price-Tax-Simple3.png" alt="Make sure to follow the directions for the Drupal Commerce Price Tax Rate edit screen." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Configure Tax Rate</p>
+        <p>It's easy, all you have to do is come up with a title, a rate, and choose the type. In the display title, you might want to include what percentage you are applying (10%).</p>
+        <p>The two types, as already discussed above, are either applied to the beginning price of a product (VAT) or at the end total in checkout (Sales Tax).</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Taxes</li>
+        <li class="last">Configure Tax Rate</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Tax-Simple4.png">
+            <img src="../screenshots/Price-Tax-Simple4.png" alt="Simple Tax Rate Applied" />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Tax Rate</p>
+        <p>This is an example of a cart with a simple flat-rate tax. It might occur to you that it would be cool if you could do a negative tax and call it a discount. That is an undocumented, but highly effective idea :)</p>
+    </div>
+</div>
+<h2>Conditional Taxes</h2>
+<p>Unfortunately, the world is not set up to allow us to do simple taxes all the time, and we end up needing rules for them. Drupal Commerce, though, is up to the task. It uses the Rules engine to allow you great flexibility.</p>
+<p>Most of the time, we'll be applying different taxes based on the location of the buyer. There are other applications, but we'll demonstrate how to do it based on order address.</p>
+<p>We're going to create a 6% South Carolina Sales Tax and configure its component so it only applies to orders billed to South Carolina addresses. (Feel free to use your own state of course!)</p>
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Tax-Advanced01.png">
+            <img src="../screenshots/Price-Tax-Advanced01.png" alt="Adding a flat rate is the easy part." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Add Flat Rate</p>
+        <p>Follow the directions in the simple tax rate section above to find yourself here. For our example, we're adding a specific South Carolina tax that is to be applied to South Carolina customers.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Taxes</li>
+        <li class="last">Add Tax Rate</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Tax-Advanced02.png">
+            <img src="../screenshots/Price-Tax-Advanced02.png" alt="Flat Rate has been saved." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Tax Rate Overview</p>
+        <p>This is the screen that you will see once you click save.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Taxes</li>
+        <li class="last">Tax Rate Overview</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Tax-Advanced03.png">
+            <img src="../screenshots/Price-Tax-Advanced03.png" alt="We need to edit the Sales Tax Rule." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Sales Tax Rule</p>
+        <p>Next, click the Tax Types tab to find a very convenient "configure rule" link. This lets you edit the default rule. It's possible to disable this rule or even add more using the Rules interface.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Taxe Types</li>
+        <li class="last">Rule Overview</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Tax-Advanced04.png">
+            <img src="../screenshots/Price-Tax-Advanced04.png" alt="Adding a condition to our Sales Tax." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Edit Rule</p>
+        <p>This is the overview screen of our default Sales Tax </p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Taxe Types</li>
+        <li class="last">Edit Rule</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Tax-Advanced05.png">
+            <img src="../screenshots/Price-Tax-Advanced05.png" alt="Choose the Order address component comparison" />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Add Condition</p>
+        <p>Simply add a condition with the "Order address component comparison."</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Taxe Types</li>
+        <li>Edit Rule</li>
+        <li class="last">Add Condition</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Tax-Advanced06.png">
+            <img src="../screenshots/Price-Tax-Advanced06.png" alt="Configure the condition using a data selector, choose which address field to look at, choose the piece of address you want to compare, and then add your value. " />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Configure Condition</p>
+        <p>Configure the condition using a data selector, choose which address field to look at, choose the piece of address you want to compare, and then add your value. </p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Taxe Types</li>
+        <li>Edit Rule</li>
+        <li class="last">Configure Condition</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Tax-Advanced07.png">
+            <img src="../screenshots/Price-Tax-Advanced07.png" alt="Overview of Changes" />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Overview of Changes</p>
+        <p>This is what the additional condition should look like after you click save. Note that the values of the field can be determined by looking at the form elements that one would choose while filling out the form. The id of the drop downs are the best place to look.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Taxe Types</li>
+        <li class="last">Overview</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Price-Tax-Advanced08.png">
+            <img src="../screenshots/Price-Tax-Advanced08.png" alt="Our Condition Works" />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Overview of Checkout</p>
+        <p>This rule in progress is shown when checking out and choosing the matching state from the customer's profile data.</p>
+    </div>
+</div>
 </body>
 </html>

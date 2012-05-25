@@ -7,17 +7,12 @@
 </head>
 
 <body>
-<h1>Checkout-Pages</h1>
-<h2>Video / Assets</h2>
-<ul>
-    <li><a href="#">Link</a></li>
-</ul>
-<h2>Documentation</h2>
-<p>Desc</p>
-<ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
-</ol>
+<h1>Checkout Single vs. multiple page</h1>
+<p>The checkout form represents any of a number of checkout pages that are comprised of fieldsets (or container divs) called checkout panes. The normal progression through the checkout form goes from one non-empty checkout page to the next until the Completion page is reached.</p>
+<p>The checkout form can safely be altered to suit your needs via the drag and drop checkout form builder. Existing checkout pages can be ignored by removing any checkout panes from them, and additional checkout pages can also be defined using hook_commerce_checkout_page_info().</p>
+<p>The Payment page is solely used for the off-site payment redirect checkout pane. It is purely a point of departure and return for off-site payment methods and should not be used to hold any other checkout panes. This page contains no continue or back buttons, as such movement is meant to occur in conjunction with requests from the payment service.</p>
+<p>Additionally, orders on this page of the checkout form will no longer be considered shopping carts so the total of the order does not change while the customer is submitting payment.</p>
+<h2>Overview of screenshots</h2>
+<p>[Needs Images]</p>
 </body>
 </html>

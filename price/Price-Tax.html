@@ -7,17 +7,73 @@
 </head>
 
 <body>
-<h1>Price-Tax</h1>
-<h2>Video / Assets</h2>
+Taxes
+
+In Drupal Commerce, there is a system of tax rates that are applied using rules that are connected to categories or tax types. The Tax Rates are completely user supplied or perhaps third party supplied. 
+
 <ul>
-    <li><a href="#">Link</a></li>
+<li><strong>Tax Rates</strong> - You can create a tax rate for each tax you must collect from your customers. Tax rates are defined in decimal format and may be applied to line item via Rules.</li>
+<li><strong>Tax Types</strong> - Tax types categorize tax rates and specify whether or not the calculated tax should be included in product prices on display.</li>
 </ul>
-<h2>Documentation</h2>
-<p>Desc</p>
-<ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
-</ol>
+
+The Tax Types indicate and allow for any variety of system to exist in code, but we define the two most common cases for use in Drupal Commerce. The best case scenario is that your required tax system falls under one of these two systems.
+
+<ul>
+<li>Sales Tax is the style of tax often used in the US, where many governmental entities impose their own tax on every purchase. It's typically added as a line item in the subtotal.</li>
+<li>VAT is used in much of the rest of the world. In VAT, the total shown to the customer already includes the tax, and nothing is added in the subtotal section (although Drupal Commerce does itemize the tax portion of the total.)</li>
+</ul>
+
+Taxes will of course be calculated in order of their Rules weights, but at present taxes
+are only cumulative if of the VAT type. Multiple sales taxes will all be calculated from whatever
+the current price amount is. 
+
+Because these are simply default Rules, you can disable them and create new Rules at will. Alternately, you can leave them in place and not make use of the default components, preferring instead to apply your taxes in code via hook_commerce_tax_type_calculate_rates().
+
+h2. Simple Taxes
+
+If you have a tax which is added to every order without any complex rules, there's nothing to it. Visit the tax rate configuration at Administration -> Store -> Configuration -> Taxes (admin/commerce/config/taxes) and add a tax rate.
+
+For example, let's create a simple 10% Sales Tax:
+
+Price-Tax-Simple1.png
+Add simple tax rate here.
+Navigate to Taxes
+It's not hard to locate the taxes page on the Store Configuration Panel. You might sleep better at night thinking this list is alphabetical, but we assure you that taxes is at the bottom because that's where it belongs.
+
+Price-Tax-Simple2.png
+Add a simple tax rate.
+Click Add a Tax Rate
+Be careful not to complicate this. We simply want you to click the "add a tax rate" link.
+
+Price-Tax-Simple3.png
+Make sure to follow the directions for the Drupal Commerce Price Tax Rate edit screen.
+Configure Tax Rate
+It's easy, all you have to do is come up with a title, a rate, and choose the type. In the display title, you might want to include what percentage you are applying (10%). 
+
+The two types, as already discussed above, are either applied to the beginning price of a product (VAT) or at the end total in checkout (Sales Tax).
+
+Price-Tax-Simple4.png
+Simple Tax Rate Applied
+Tax Rate
+This is an example of a cart with a simple flat-rate tax. It might occur to you that it would be cool if you could do a negative tax and call it a discount. That is an undocumented, but highly effective idea :)
+
+
+h2. Conditional Taxes
+
+Unfortunately, the world is not set up to allow us to do simple taxes all the time, and we end up needing rules for them. Drupal Commerce, though, is up to the task. It uses the Rules engine to allow you great power.
+
+Most of the time, we'll be applying different taxes based on the location of the buyer. There are other applications, but we'll demonstrate how to do it based on order address
+
+1. Add a 6% South Carolina Sales Tax and configure its component so it only applies to
+orders billed to South Carolina addresses. (Feel free to use your own state of course!)
+
+Price-Tax-Advanced01.png
+Price-Tax-Advanced02.png
+Price-Tax-Advanced03.png
+Price-Tax-Advanced04.png
+Price-Tax-Advanced05.png
+Price-Tax-Advanced06.png
+Price-Tax-Advanced07.png
+Price-Tax-Advanced08.png
 </body>
 </html>

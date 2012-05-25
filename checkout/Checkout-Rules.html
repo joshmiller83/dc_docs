@@ -7,17 +7,41 @@
 </head>
 
 <body>
-<h1>Checkout-Rules</h1>
-<h2>Video / Assets</h2>
+<h1>Checkout Completion Rules</h1>
+<p>Drupal Commerce defines several default checkout completion rules that perform the following operations when an order in checkout first reaches the checkout completion page:</p>
 <ul>
-    <li><a href="#">Link</a></li>
+    <li>Updates the order status to the default status of the Pending state (typically the matching Pending status).</li>
+    <li>Assigns an anonymous order with a known e-mail address to the appropriate user account -or-</li>
+    <li>Creates a new user and sends the new account e-mail notification to the customer.</li>
+    <li>Send an order notification e-mail to the customer.</li>
 </ul>
-<h2>Documentation</h2>
-<p>Desc</p>
-<ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
-</ol>
+<p>You are free to customize these defaults rules, disable them entirely, and add your own rules to address your business logic pertaining to what must happen on checkout completion. Note that payment may not have been completed at this time; it may still be pending or it may have been submitted as an authorization awaiting a later capture.</p>
+<p>If you have business logic that depends on payment being completed, you should add rules to the When an order is first paid in full event instead.</p>
+<h2>Adding Fields to People/Account Settings</h2>
+<p>There is a neccessary for the commerce checkout rule when you add fields to people/account settings.</p>
+<p>[Needs Images]</p>
+If you have added one or more extra fields (Like for example radio buttons for new members to select) at
+
+Home È Administration È Configuration È People È Account settings È Manage Fields
+
+You will also need to go to
+
+Home È Administration È Store È Configuration È Checkout settings
+
+Go to the the checkout rules tab on the top right of the page,
+
+Look for the rule:
+Create a new account for an anonymous order. By the way, this rule should now have an error message, showing in red underneath it like so Error: Missing configuration for parameter param_field_your field name here
+
+Click edit on the Create a new account for an anonymous order rule.
+
+Then click on the Rules Action, named create a new entity. Then scroll down the page for the settings of that action and there should be a selection that matches the name of your field you had put in people account settings manage fields, now put the matching setting here in the rules action, as you had already put in people account settings manage fields.
+
+Now the error message will be gone and setup will be correct.
+
+If you have put multiple fields in people account settings manage fields. Then there maybe more actions that need editing.
+<h2>Re-Create A Default Rule</h2>
+<p>[Needs Images]</p>
+
 </body>
 </html>

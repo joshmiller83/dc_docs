@@ -7,17 +7,11 @@
 </head>
 
 <body>
-<h1>Checkout-Router</h1>
-<h2>Video / Assets</h2>
-<ul>
-    <li><a href="#">Link</a></li>
-</ul>
-<h2>Documentation</h2>
-<p>Desc</p>
-<ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
-</ol>
+<h1>Checkout router</h1>
+<p>One of the more important parts of a good ecommerce software is the security of the checkout process. Just like in a real store, you don't want people to walk out of your store without paying. The Checkout Router is the function that stands between your customers and their order's status turning to completed.</p>
+<p>Basically what the checkout router does is make sure you don't try to access someone else's checkout page or try to skip ahead to your own completion page. A worse-case scenario is that someone could guess someone else's order ID (but nothing would happen) or try to jump forward in checkout be changing the URL (but they'd get kicked back).</p>
+<p>Drupal Commerce keeps track of the order status and checks that against each page in checkout. As the order moves through the checkout process, we update the status to keep track of the pages we can allow the customer to view. If the user goes to the first checkout page and then tries to browse straight to checkout/###/complete, the router will say "Hold your horses" and send them back to the correct page.</p>
+<h2>Excercise: Create an order and then visit that checkout page.</h2>
+<p>so I just did a test, and my cart order's status was Checkout: Shipping, so I got sent to the shipping page. Of course, there is a place here for developers to hook into the process if they need.</p>
 </body>
 </html>

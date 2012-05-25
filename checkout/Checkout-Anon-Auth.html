@@ -7,17 +7,12 @@
 </head>
 
 <body>
-<h1>Checkout-Anon-Auth</h1>
-<h2>Video / Assets</h2>
-<ul>
-    <li><a href="#">Link</a></li>
-</ul>
-<h2>Documentation</h2>
-<p>Desc</p>
-<ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
-</ol>
+<h1>Checkout Anonymous vs. Authenticated</h1>
+<p>What is the difference between an authenticated and anonymous checkout? The difference is in the completion rules.</p>
+<p>Customer information is collected for orders on separate entities called customer profiles that are associated with the order through customer profile reference fields. By default the Billing information customer profile type just includes an address field, but it can be edited through the field interface to include any additional fields you require. These fields will automatically be visible on the related checkout pane for the customer profile.</p>
+<p>Some modules define additional customer profile types, such as the Shipping information customer profile type defined in the Commerce Shipping module.</p>
+<p>During a default checkout process, customers cannot reuse previously created customer profiles. A new customer profile will be saved each time, though modules like Commerce Addressbook seek to alleviate this problem with a nice UI. Customer profiles edited through the back-end UI may also result in duplicate customer profiles being saved to avoid the loss of data when a customer profile is edited that has been referenced by a previous order.</p>
+<h2>Recreate an Authenticated Rule</h2>
+<p>[Needs Images]</p>
 </body>
 </html>

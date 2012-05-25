@@ -7,17 +7,17 @@
 </head>
 
 <body>
-<h1>Checkout-Order</h1>
-<h2>Video / Assets</h2>
-<ul>
-    <li><a href="#">Link</a></li>
-</ul>
-<h2>Documentation</h2>
-<p>Desc</p>
+<h1>Checkout Order Updates</h1>
+<p>As customers progress through checkout, their cart orders are continually being updated. This makes the checkout form act as a multi-step order edit form with the end result being a fully formed order that is ready for fulfillment or completion.</p>
+<p>In addition to customer data being saved to the order, the order status is also updated to reflect its current place in the checkout process. The checkout router uses the order status to determine a customer’s access to visit a requested checkout page for a particular order.</p>
+<p>Upon checkout completion, the Completing the checkout process event/hook is invoked, allowing you to affect what happens to orders and what sort of communication needs to occur on checkout completion. By default Drupal Commerce executes the following checkout completion rules:</p>
 <ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
+    <li>Updates the order status to the default status of the Pending state (typically the matching Pending status).</li>
+    <li>Assigns an anonymous order with a known e-mail address to the appropriate user account -or-</li>
+    <li>Creates a new user and sends the new account e-mail notification to the customer.</li>
+    <li>Send an order notification e-mail to the customer.</li>
 </ol>
+<p>The Pending order status simply means that the order is now out of the customer’s hands and in yours. You don’t need to use this status at all if you don’t need it, but the basic idea is that orders first appear to you and the customer as Pending until you acknowledge them and begin Processing them. Once fulfillment occurs or payment is complete for orders that require no additional fulfillment, orders can then be considered Completed.</p>
+<p><strong>Note</strong> &mdash; Note that there is a separate more reliable event for When an order is first paid in full that should be used to update or process an order based on payment. Checkout can complete with payment still pending, so it is best not to mark orders completed on the basis of checkout completion alone.</p>
 </body>
 </html>

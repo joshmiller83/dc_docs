@@ -8,10 +8,62 @@
 
 <body>
 <h1>Checkout router</h1>
+<div class="screenshot">
+    <a href="../screenshots/Checkout-Router-Review-Error.png">
+        <img src="../screenshots/Checkout-Router-Review-Error.png" alt="Default Drupal Commerce Checkout Router Error" />
+    </a>
+</div>
 <p>One of the more important parts of a good ecommerce software is the security of the checkout process. Just like in a real store, you don't want people to walk out of your store without paying. The Checkout Router is the function that stands between your customers and their order's status turning to completed.</p>
 <p>Basically what the checkout router does is make sure you don't try to access someone else's checkout page or try to skip ahead to your own completion page. A worse-case scenario is that someone could guess someone else's order ID (but nothing would happen) or try to jump forward in checkout be changing the URL (but they'd get kicked back).</p>
 <p>Drupal Commerce keeps track of the order status and checks that against each page in checkout. As the order moves through the checkout process, we update the status to keep track of the pages we can allow the customer to view. If the user goes to the first checkout page and then tries to browse straight to checkout/###/complete, the router will say "Hold your horses" and send them back to the correct page.</p>
 <h2>Excercise: Create an order and then visit that checkout page.</h2>
-<p>so I just did a test, and my cart order's status was Checkout: Shipping, so I got sent to the shipping page. Of course, there is a place here for developers to hook into the process if they need.</p>
+<p>Let's do a quick test of the router functionality. The idea is to go through the checkout process once and note the url. I just did that and found this url at the end: /checkout/1/complete. This means that the next order I create would be: /checkout/2/complete. Welcome to the world of <a href="http://en.wikipedia.org/wiki/Script_kiddie">script kiddies</a>. They will find a simple vulnerability like this and try to exploit it.</p>
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Checkout-Router-Exercise-1.png">
+            <img src="../screenshots/Checkout-Router-Exercise-1.png" alt="Add product to cart." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Add Product</p>
+        <p>For our first step, we're simply going to checkout a product from our store.</p>
+    </div>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Checkout-Router-Exercise-2.png">
+            <img src="../screenshots/Checkout-Router-Exercise-2.png" alt="Note the URL, look at it after next step." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Note URL</p>
+        <p>The URL is what traditional web apps use to keep track of where you are and what to do next. Drupal Commerce employs many powerful mechanisms not seen in the URL to keep a definite handle on where you should be in the process.</p>
+    </div>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Checkout-Router-Exercise-3.png">
+            <img src="../screenshots/Checkout-Router-Exercise-3.png" alt="That is the URL you should get when an order is complete." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Completed Order</p>
+        <p>This is the URL we get when the order is completed. Different options could render unique situations in this regard.</p>
+    </div>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Checkout-Router-Exercise-4.png">
+            <img src="../screenshots/Checkout-Router-Exercise-4.png" alt="We attempted another checkout but this time we tried to fool the router into thinking we were paid-in-full." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Trying to Hack</p>
+        <p>We attempted another checkout but this time we tried to fool the router into thinking we were paid-in-full. Go ahead and try this. See what happens. Try closing the browser, rebooting your computer, and then coming back to the checkout page.</p>
+    </div>
+</div>
 </body>
 </html>

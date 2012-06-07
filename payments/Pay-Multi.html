@@ -7,17 +7,86 @@
 </head>
 
 <body>
-<h1>Pay-Multi</h1>
-<h2>Video / Assets</h2>
-<ul>
-    <li><a href="#">Link</a></li>
-</ul>
-<h2>Documentation</h2>
-<p>Desc</p>
-<ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
-</ol>
+
+<h1>Multiple Instances per Payment Method</h1>
+<p>In Drupal Commerce, a little known feature is the ability to control payment methods using rules. Rules allows us to play with conditions on line items and/or order totals. For example, you can enable a certain payment system that is designed to handle small orders using a percentage-based fee (PayPal Micro-payments) and enable a different payment system that is designed to handle large orders that is a flat fee.</p>
+<p>Another possibility would be to put a condition on a certain payment system based on your customer's location or access rights.</p>
+<h2>Condition used for order amount</h2>
+<p>Below we show how you can modify the example payment method to only show up for orders over $12.</p>
+
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Pay-Multi-1.png">
+            <img src="../screenshots/Pay-Multi-1.png" alt="Edit Payment" />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Edit Example Payment</p>
+        <p>For this example, we're simply going to edit the Example Payment method and add a condition based on the total order size.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Store Administration</li>
+        <li class="last">Payment Methods</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Pay-Multi-2.png">
+            <img src="../screenshots/Pay-Multi-2.png" alt="Add Order Amount Condition" />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Add Condition</p>
+        <p>This is the rule for enabling the "Example Payment" payment method. We are going to add a condition to this so that it will only appear for orders over $12.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Store Administration</li>
+        <li>Payment Methods</li>
+        <li class="last">Rule Overview</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Pay-Multi-3.png">
+            <img src="../screenshots/Pay-Multi-3.png" alt="Select the Order Balance Comparison condition" />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Order Balance</p>
+        <p>The condition we will be using is called "Order balance comparison" under the Commerce Payment parent.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Store Administration</li>
+        <li>Payment Methods</li>
+        <li class="last">Add Condition</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Pay-Multi-4.png">
+            <img src="../screenshots/Pay-Multi-4.png" alt="Be sure to read directions. Note that we have to use the minor units for this to work. So, $12 is 1200." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Configure Condition</p>
+        <p>Be sure to read directions. Note that we have to use the minor units for this to work. So, $12 is 1200.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Store Administration</li>
+        <li>Payment Methods</li>
+        <li class="last">Configure Condition</li>
+    </ul>
+</div>
 </body>
 </html>

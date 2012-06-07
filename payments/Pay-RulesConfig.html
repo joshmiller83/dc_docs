@@ -7,17 +7,111 @@
 </head>
 
 <body>
-<h1>Pay-RulesConfig</h1>
-<h2>Video / Assets</h2>
-<ul>
-    <li><a href="#">Link</a></li>
-</ul>
-<h2>Documentation</h2>
-<p>Desc</p>
-<ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
-</ol>
+
+<h1>Rules config of payment method settings</h1>
+<p>Payment Methods in Drupal Commerce are installed as contributed modules. Most contributed modules add configuration screens to Products, the Store Configuration, or other similar pages in the administration side of your Drupal installation. Payment methods simply enable a rule that shows up in the Payment Methods found in the Store Configuration screen. </p>
+<p>So how do you configure these payment methods? You might think you can simply click on the payment, add your details and click save. Most administration screens in Drupal operate that way. In order to enable further functionality, we have opted to simply make the payment methods full rules. That means if you want the PayPal payment to show up on checkout, you need to go to this screen and click "enable" and then click "edit" for the rule, then click "edit" for the action that stores all of your developer credentials. </p>
+<p>Below we show how to enable PayPal from beginning to end. There are other kinds of payment methods and those are described in further detail at <a href="Pay-OnOffSite.html">On-Site vs. Off-Site Payment Methods</a>. </p>
+<h3>Showing PayPal Configuration for Off-Site Payments</h3>
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Pay-OnOffSite-Off-1.png">
+            <img src="../screenshots/Pay-OnOffSite-Off-1.png" alt="Enable PayPal for example Off-Site Payment configuration." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Enable Module</p>
+        <p>Enable the PayPal module for example Off-Site Payment configuration.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li class="last">Modules</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Pay-OnOffSite-Off-2.png">
+            <img src="../screenshots/Pay-OnOffSite-Off-2.png" alt="You must enable Payment Methods before you can use them." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Enable Payment Methods</p>
+        <p>Once you've enabled the modules, they will appear in the Payment Methods section of the Store Configuration. A lot of people will go here first before enabling the modules.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li class="last">Store Configuration</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Pay-OnOffSite-Off-3.png">
+            <img src="../screenshots/Pay-OnOffSite-Off-3.png" alt="Enable the Off-Site Payment Method example PayPal" />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Enable Method Rule</p>
+        <p>Before you can configure, let's go ahead and enable the off-site payment method example PayPal</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Store Configuration</li>
+        <li class="last">Payment Methods</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Pay-OnOffSite-Off-4.png">
+            <img src="../screenshots/Pay-OnOffSite-Off-4.png" alt="Configure PayPal" />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Configure Payment Method</p>
+        <p>After you have enabled the rule, you can now click "edit" to configure your payment method.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Store Configuration</li>
+        <li>Payment Methods</li>
+        <li class="last">Configure Payment Method</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Pay-OnOffSite-Off-5.png">
+            <img src="../screenshots/Pay-OnOffSite-Off-5.png" alt="This is where you configure the Payment Method." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Configure Payment Method</p>
+        <p>Once you click "Edit" you are presented with the rule configuration screen. To edit your credentials/etc you need to click "edit" on the actions. You could also add conditions to when this payment method should be used (only on orders over $50, perhaps?).</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Store Configuration</li>
+        <li>Payment Methods</li>
+        <li class="last">Configure Payment Method</li>
+    </ul>
+</div>
+<br />
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Pay-OnOffSite-Off-6.png">
+            <img src="../screenshots/Pay-OnOffSite-Off-6.png" alt="You can see our PayPal payment method has been enabled." />
+        </a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Off-Site Payment</p>
+        <p>Off-Site Payment Method is now functional for PayPal.</p>
+    </div>
+</div>
 </body>
 </html>

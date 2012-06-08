@@ -7,17 +7,32 @@
 </head>
 
 <body>
-<h1>Order-Status</h1>
-<h2>Video / Assets</h2>
+<h1>Order States and Statuses</h1>
+<p>Each order in Drupal Commerce has a very important identifying piece of information defined by a group called a "state" and a phase called a "status."</p>
+
+<div class="screenshot">
+    <a href="../screenshots/Order-Status.png">
+        <img src="../screenshots/Order-Status.png" alt="Order Status Screen" />
+    </a>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Orders</li>
+        <li class="last">Add/Edit Orders</li>
+    </ul>
+</div>
+<h2>Order Module States</h2>
+<p>The Order module defines several order states in its own implementation of this hook, commerce_order_commerce_order_state_info():</p>
 <ul>
-    <li><a href="#">Link</a></li>
+    <li><strong>Canceled</strong>: For orders that have been canceled through some user action.</li>
+    <li><strong>Pending</strong>: For orders that have been created and are awaiting further action.</li>
+    <li><strong>Completed</strong>: For orders that have been completed as far as the customer should be concerned.</li>
 </ul>
-<h2>Documentation</h2>
-<p>Desc</p>
-<ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
-</ol>
+<h2>Cart &amp; Checkout Module States</h2>
+<p>Additionally, the cart and checkout modules define the following order states:</p>
+<ul>
+    <li><strong>Shopping cart</strong>: for orders that have not been completed by the customer yet.</li>
+    <li><strong>Checkout</strong>: for orders that have begun but not yet completed the checkout process.</li>
+</ul>
 </body>
 </html>

@@ -7,17 +7,35 @@
 </head>
 
 <body>
-<h1>Order-Create</h1>
-<h2>Video / Assets</h2>
+<h1>Creating Orders</h1>
+<p>Creating orders actually happens (seamlessly to the customer) when they create a shopping cart. A shopping cart is simply an order with a status of "Shopping Cart." To learn more about shopping carts visit these pages:</p>
 <ul>
-    <li><a href="#">Link</a></li>
+    <li><a href="../cart/Cart-Order-LineItems.html">Shopping Carts, Orders, and Line Items</a></li>
+    <li><a href="../cart/Cart-AddtoCart.html">Add to Cart Form</a></li>
+    <li><a href="../cart/Cart-Anon2Auth.html">Anonymous Carts and Logged In Users</a></li>
+    <li><a href="../cart/Cart-BlockandViews.html">Modifying the Shopping Cart using Views</a></li>
+    <li><a href="../cart/Cart-MultiCurrency.html">Shopping Cart and Multi-Currency</a></li>
+    <li><a href="../cart/Cart-Refresh.html">Price Recalculation on Load</a></li>
 </ul>
-<h2>Documentation</h2>
-<p>Desc</p>
-<ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
-</ol>
+
+<div class="screenshot">
+    <a href="../screenshots/Order-Admin-2.png">
+        <img src="../screenshots/Order-Admin-2.png" alt="Order Configuration Screen" />
+    </a>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Orders</li>
+        <li class="last">Add/Edit Orders</li>
+    </ul>
+</div>
+<p>Each Order can be created or edited using this administrative interface. The screenshot here is highlighting the following sections:</p>
+<ul>
+	<li><strong>Line Items</strong>: The line items are the products that are in the Shopping Cart. As you can see, you have the ability to add Products. If you click "Add line item" it will ask you for the SKU. Additionally, if you are using the Inline Entity Form module, it will let you choose variations like shirt size, color.</li>
+	<li><strong>Customer Profile</strong>: Customer Profile information is listed here in an easy-to-edit form. Note that this customer profile information, by default, is unique to each Order. There are several freely contributed modules that can add functionality to the customer profile checkout process.</li>
+	<li><strong>Order Status</strong>: Here is where you can manage the order status and change it to one of a number of different statuses, including canceled or other various options.</li>
+	<li><strong>User Information</strong>: You might be tempted to ignore this tab, but that would be a mistake. When adding or editing Orders make sure to check that the appropriate user is selected. By default, Drupal Commerce will create a user for an anonymous orders.</li>
+	<li><strong>Order History</strong>: This tab is very useful because it will list every order status change.</li>
+</ul>
 </body>
 </html>

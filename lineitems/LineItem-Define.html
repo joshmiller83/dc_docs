@@ -7,17 +7,17 @@
 </head>
 
 <body>
-<h1>LineItem-Define</h1>
-<h2>Video / Assets</h2>
+<h1>Line item definition</h1>
+<p>A line item is any aspect of an order that adds to (or subtracts from) the order total. Each line item must be of one of the defined line item types, which defines how it interacts with the shopping cart, order edit interface, and other parts of Commerce.</p>
+<p>When modules are enabled that implement hook_commerce_line_item_type_info(), the Line Item module will detect it and perform initial configuration of the line item type by adding locked unit price and total price fields to the new bundle. It then allows the module defining the line item type to perform any additional configuration through the use of a special callback defined in the line item type’s definition. Any additional fields required by line items of this type can be added here, such as the product reference and display path fields added to the core Product line item type.</p>
+<p>Core line item types include:</p>
 <ul>
-    <li><a href="#">Link</a></li>
+	<li><strong>Product</strong>: defined by the Product Reference module, this line item type references a product and uses the SKU and special view modes for display in line item interfaces.</li>
+	<li><strong>Coupon</strong>: defined by the Commerce Coupon module.</li>
+	<li><strong>Shipping</strong>: references a shipping method and displays the rate with the selected service title.</li>
+	<li><strong>Example</strong>: defined by the Commerce Examples module.</li>
 </ul>
-<h2>Documentation</h2>
-<p>Desc</p>
-<ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
-</ol>
+<h2>Customizable Product Line Items</h2>
+<p>Just a quick note here that there is a lot of power behind letting your customer tweak the line item. A great example of this is ordering an iPod on Apple's website. Once you've selected the variation (size, color, etc) you can then inscribe the iPod. This is a line item customization and <a href="LineItem-Customize.html">can be accomplished relatively easily</a>.</p>
 </body>
 </html>

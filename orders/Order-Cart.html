@@ -7,17 +7,70 @@
 </head>
 
 <body>
-<h1>Order-Cart</h1>
-<h2>Video / Assets</h2>
+<h1>Cart Orders</h1>
+<p>An order that is a "cart" is known as a shopping cart and is simply an order with a status of "Shopping Cart." To learn more about shopping carts visit these pages:</p>
 <ul>
-    <li><a href="#">Link</a></li>
+    <li><a href="../cart/Cart-Order-LineItems.html">Shopping Carts, Orders, and Line Items</a></li>
+    <li><a href="../cart/Cart-AddtoCart.html">Add to Cart Form</a></li>
+    <li><a href="../cart/Cart-Anon2Auth.html">Anonymous Carts and Logged In Users</a></li>
+    <li><a href="../cart/Cart-BlockandViews.html">Modifying the Shopping Cart using Views</a></li>
+    <li><a href="../cart/Cart-MultiCurrency.html">Shopping Cart and Multi-Currency</a></li>
+    <li><a href="../cart/Cart-Refresh.html">Price Recalculation on Load</a></li>
 </ul>
-<h2>Documentation</h2>
-<p>Desc</p>
-<ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
-</ol>
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Cart-Order-LineItems-Order-Status.png"><img
+        src="../screenshots/Cart-Order-LineItems-Order-Status.png" alt="Order
+        Status for Shopping Carts" /></a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Order with Status</p>
+        <p>A shopping cart in Drupal Commerce is simply an order with a
+        particular cart order status. In fact, almost everything in Drupal
+        Commerce revolves around changing the order status.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>View Orders</li>
+        <li>Add / Edit Order</li>
+        <li class="last">Order Status at Bottom</li>
+    </ul>
+</div>
+<p> As soon as a product is added to the cart, an order is created and
+associated with the customer either via user ID if logged in or via an array in
+the session if not (commerce_cart_orders).</p>
+<p>The shopping cart is totally optional, meaning checkout is implemented in a
+separate module and will still function properly for orders created by the
+administrator. This allows for sites to do invoicing and payment collection
+where users shouldn't be allowed to create and manage their own orders via a
+cart.</p>
+<div class="screenshot screenshot-caption">
+    <div class="img">
+        <a href="../screenshots/Cart-Order-LineItems-Admin.png"><img
+        src="../screenshots/Cart-Order-LineItems-Admin.png" alt="Administrative
+        View for Shopping Carts" /></a>
+    </div>
+    <div class="caption">
+        <p class="caption-title">Administrative View</p>
+        <p>When you view all of the open shopping carts, it is possible that one
+        customer has multiple open shopping carts.</p>
+    </div>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>View Orders</li>
+        <li class="last">Click "Shopping Carts" in the upper right.</li>
+    </ul>
+</div>
+<p>Each change to a shopping cart order is saved as a revision. A user can also
+have more than one cart, though the default is to present the most recent
+shopping cart to the user. <a
+href="http://api.drupalcommerce.org/api/Drupal%20Commerce/sites%21all%21modules%21commerce%21modules%21cart%21commerce_cart.api.php/function/hook_commerce_cart_order_id/DC">hook_commerce_cart_order_id()</a>
+can be used to
+introduce alternate logic to the cart load process if necessary.</p>
+<p><strong>Note:</strong> As long as the order is still in the shopping cart state, its line
+items will be re-validated on load against the latest product prices /
+availability, etc.</p>
 </body>
 </html>

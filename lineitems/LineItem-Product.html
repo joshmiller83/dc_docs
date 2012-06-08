@@ -7,17 +7,32 @@
 </head>
 
 <body>
-<h1>LineItem-Product</h1>
-<h2>Video / Assets</h2>
+<h1>Product Line Items</h1>
+<div class="screenshot">
+    <a href="../screenshots/LineItem-Product.png">
+        <img src="../screenshots/LineItem-Product.png" alt="Product Line Item Type" />
+    </a>
+    <ul class="screenshot_breadcrumbs">
+        <li class="first">Administration</li>
+        <li>Store</li>
+        <li>Store Configuration</li>
+        <li>Line Item Types</li>
+        <li class="last">Product Line Item</li>
+    </ul>
+</div>
+<p>One of the more important line items to your Drupal Commerce store is a product line item. By default, there is only one type of Line Item defined. There can be others, but unlike Product Entities or Customer Profile Entities, these kinds of entities don't mean much unless they have some custom API code to give them more purpose. </p>
+<p>Product line items inherit normal line item properties:</p>
 <ul>
-    <li><a href="#">Link</a></li>
+	<li>Line Item ID</li>
+	<li>Order ID</li>
+	<li>Product SKU (specific to Product line items)</li>
+	<li>Type</li>
+	<li>Label</li>
+	<li>Quantity</li>
+	<li>Created</li>
+	<li>Changed</li>
+	<li>Data</li>
 </ul>
-<h2>Documentation</h2>
-<p>Desc</p>
-<ol>
-    <li><strong>Step 1</strong> - desc.</li>
-    <li><strong>Step 2</strong> - desc.</li>
-    <li><strong>Step 3</strong> - desc.</li>
-</ol>
+<p>Each line item type can also be treated just like any other entity type, you can add fields to it and play with it in Views. For example, it's possible to add a field to your default product line item called "coupon" and then create a rule that will discount the line item if the value of that field equals one of your pre-defined coupons. This would also be very handy for tracking advertising because you could call up with Views all of your orders that had a specific coupon applied without very much knowledge about databases.</p>
 </body>
 </html>
